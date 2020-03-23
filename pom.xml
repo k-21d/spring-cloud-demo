@@ -18,6 +18,7 @@
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-discovery</module>
         <module>spring-cloud-client-application</module>
+        <module>spring-cloud-server-application</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
