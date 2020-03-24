@@ -2,6 +2,8 @@ package com.k21d.springcloud.client.controller;
 
 import com.k21d.springcloud.client.annotation.CustomizedLoadBalanced;
 import com.k21d.springcloud.client.loadbalance.LoadBalanceInterceptor;
+import com.k21d.springcloud.client.service.feign.clients.SayingService;
+import com.k21d.springcloud.client.service.rest.clients.SayingRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +21,10 @@ import java.util.stream.Collectors;
 
 @RestController
 public class ClientController {
+    @Autowired
+    private SayingService sayingService;
+    @Autowired
+    private SayingRestService sayingRestService;
 
     @Autowired
     @CustomizedLoadBalanced
@@ -79,6 +85,15 @@ public class ClientController {
     @GetMapping("/loadbanlance/invoke/{serviceName}/say")
     public String lbInvokeSay(@PathVariable String serviceName,@RequestParam String message){
         return lbRestTemplate.getForObject("http://"+serviceName+"/say?message="+message, String.class);
+    }
+
+    @GetMapping("/feign/say")
+    public String feignSay(@RequestParam String message){
+        return sayingService.say(message);
+    }
+    @GetMapping("/rest/say")
+    public String restSay(@RequestParam String message){
+        return sayingRestService.say(message);
     }
     @Bean
     public ClientHttpRequestInterceptor interceptor(){
