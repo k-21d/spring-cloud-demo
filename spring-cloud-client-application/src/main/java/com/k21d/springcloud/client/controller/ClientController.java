@@ -23,8 +23,8 @@ import java.util.stream.Collectors;
 public class ClientController {
     @Autowired
     private SayingService sayingService;
-    @Autowired
-    private SayingRestService sayingRestService;
+//    @Autowired
+//    private SayingRestService sayingRestService;
 
     @Autowired
     @CustomizedLoadBalanced
@@ -91,10 +91,10 @@ public class ClientController {
     public String feignSay(@RequestParam String message){
         return sayingService.say(message);
     }
-    @GetMapping("/rest/say")
-    public String restSay(@RequestParam String message){
-        return sayingRestService.say(message);
-    }
+//    @GetMapping("/rest/say")
+//    public String restSay(@RequestParam String message){
+//        return sayingRestService.say(message);
+//    }
     @Bean
     public ClientHttpRequestInterceptor interceptor(){
         return new LoadBalanceInterceptor();

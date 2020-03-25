@@ -19,6 +19,7 @@
         <module>spring-cloud-discovery</module>
         <module>spring-cloud-client-application</module>
         <module>spring-cloud-server-application</module>
+        <module>spring-cloud-servlet-gateway</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
