@@ -20,6 +20,7 @@
         <module>spring-cloud-client-application</module>
         <module>spring-cloud-server-application</module>
         <module>spring-cloud-servlet-gateway</module>
+        <module>spring-cloud-eureka-server</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

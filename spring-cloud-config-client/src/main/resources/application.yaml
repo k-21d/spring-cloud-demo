@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-client
+
+
+server:
+  port: 3012
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.server.host}:${eureka.server.port}/eureka
+  server:
+    host: 127.0.0.1
+    port: 12342
