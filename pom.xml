@@ -21,6 +21,8 @@
         <module>spring-cloud-server-application</module>
         <module>spring-cloud-servlet-gateway</module>
         <module>spring-cloud-eureka-server</module>
+        <module>spring-cloud-service-provider</module>
+        <module>spring-cloud-auth-server</module>
     </modules>
     <packaging>pom</packaging>
     <properties>

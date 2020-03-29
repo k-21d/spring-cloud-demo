@@ -4,7 +4,7 @@ spring:
 
 
 server:
-  port: 12342
+  port: 12345
 eureka:
   client:
     service-url:
